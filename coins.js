@@ -14,8 +14,29 @@ function calculateCoin(coins, gol) {
   return coinResult;
 }
 
+function calculateCoinBruteForce(coin, gol) {
+  const result = [];
+
+  for (let i = 0; i < coin.length; i++) {
+    result.push(calculateCoin(coin.slice(i), gol));
+  }
+
+  let bestPractice = Number.MAX_SAFE_INTEGER;
+  let bestPracticeResult;
+
+  for (const el of result) {
+    if (el.coinCounter < bestPractice) {
+      bestPractice = el.coinCounter;
+      bestPracticeResult = el;
+    }
+  }
+  return bestPracticeResult;
+}
+
 const availableCoins = [8, 6, 5, 1];
 let gol = 11;
 
-const result = calculateCoin(availableCoins, gol);
+// const result = calculateCoin(availableCoins, gol);
+const result = calculateCoinBruteForce(availableCoins, gol);
+
 console.log(result);
