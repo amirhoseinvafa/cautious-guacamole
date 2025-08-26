@@ -33,7 +33,7 @@ function calculateCoinBruteForce(coin, gol) {
   return bestPracticeResult;
 }
 
-const availableCoins = [8, 8, 6, 5, 1];
+const availableCoins = [8, 6, 5, 1];
 let gol = 11;
 
 // const result = calculateCoin(availableCoins, gol);
