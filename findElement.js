@@ -25,3 +25,6 @@ console.log(
     return i.name === el.name;
   }),
 );
+
+//It's same with find and findIndex
+// array.findIndex((el)=> el.name === "D")
