@@ -22,9 +22,9 @@ function quickSort(arr) {
     }
   }
 
-  const smallerElSortedArray = sort(smallerElArray);
-  const biggerElSortedArray = sort(biggerElArray);
+  const smallerElSortedArray = quickSort(smallerElArray);
+  const biggerElSortedArray = quickSort(biggerElArray);
   return smallerElSortedArray.concat(centerElArray, biggerElSortedArray);
 }
 
-console.log(sort([-3, 1, 10, 100, -3, -10, 22, 15, 54])); // [-10, -3, -3, 1, 10,15, 22, 54, 100]
+console.log(quickSort([-3, 1, 10, 100, -3, -10, 22, 15, 54])); // [-10, -3, -3, 1, 10,15, 22, 54, 100]
