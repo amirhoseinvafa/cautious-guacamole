@@ -37,6 +37,25 @@ console.log(getPermutation(todoListItem).length);
 // ====================================================================
 // With repetition
 
-function getPermutationsWR(d, r) {}
+function getPermutationsWR(options, length) {
+  const permutation = [];
+
+  if (length === 1) {
+    return options.map((option) => [option]);
+  }
+
+  const partialPermutations = getPermutationsWR(options, length - 1);
+
+  for (const option of options) {
+    for (const existingPermutation of partialPermutations) {
+      permutation.push([option].concat(existingPermutation));
+    }
+  }
+
+  return permutation;
+}
+
 const digit = [1, 2, 3];
 const resultLength = 3;
+
+console.log(getPermutationsWR(digit, resultLength));
